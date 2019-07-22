@@ -106,18 +106,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(Map4D map4D) {
         this.map4D = map4D;
-        map4D.setOnMyLocationButtonClickListener(new Map4D.OnMyLocationButtonClickListener() {
-            @Override
-            public boolean onMyLocationButtonClick() {
-                Toast.makeText(getApplicationContext(), "My Location Button clicked", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+//        map4D.setOnMyLocationButtonClickListener(new Map4D.OnMyLocationButtonClickListener() {
+//            @Override
+//            public boolean onMyLocationButtonClick() {
+//                Toast.makeText(getApplicationContext(), "My Location Button clicked", Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
 
         map4D.setOnMyLocationClickListener(new Map4D.OnMyLocationClickListener() {
             @Override
             public void onMyLocationClick(Location location) {
-                Toast.makeText(getApplicationContext(), "My Location Icon clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), location.getLatitude()+"_"+location.getLongitude(), Toast.LENGTH_SHORT).show();
             }
         });
 
